@@ -23,9 +23,9 @@
 ***************************************************************/
 
 require_once(PATH_t3lib.'class.t3lib_extobjbase.php');
-require_once(t3lib_extMgm::extPath('categories_importipsv').'xmlparser.php');
+require_once(t3lib_extMgm::extPath('categoriesimportipsv').'xmlparser.php');
 require_once(PATH_t3lib."class.t3lib_tcemain.php");
-$LANG->includeLLFile('EXT:categories_importipsv/locallang.xml');
+$LANG->includeLLFile('EXT:categoriesimportipsv/locallang.xml');
 
 		//$GLOBALS['TYPO3_DB']->sql_query('TRUNCATE tx_categories');
 		//$GLOBALS['TYPO3_DB']->sql_query('TRUNCATE tx_categories_mm');
@@ -39,7 +39,7 @@ class tx_categoriesimportipsv extends t3lib_extobjbase {
 		global $LANG;
 		
 		$modMenu = array(
-			'tx_categoriesimportipsv_filepath' => 'EXT:categories_importipsv/ipsvhierarchy.xml',
+			'tx_categoriesimportipsv_filepath' => 'EXT:categoriesimportipsv/ipsvhierarchy.xml',
 			'tx_categoriesimportipsv_origidprefix' => 'ipsv_',			
 			'tx_categoriesimportipsv_action' => array(
 				'import' => 'Import',
@@ -288,13 +288,9 @@ class tx_categoriesimportipsv extends t3lib_extobjbase {
 					flush();
 
 				}
-								
 			}
 		}
-		
-		
 	}
-	
 }
 
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/categories_importipsv/class.tx_categoriesimportipsv.php'])	{
